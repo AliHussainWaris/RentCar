@@ -28,6 +28,22 @@
           <p>Building Intuitive Interfaces for Web & Mobile Applications</p>
         </div>
       </div>
+      <div class="text-white d-flex border border-white mx-auto rounded-pill p-2 gap-2" style="width:75%" >
+        <img src="./Images/Hammad.jpg" class="rounded-circle" width="15%" alt="Ali Hussain"/>
+        <div class="d-flex flex-column justify-content-center w-75">
+          <h3>Hammad Tariq</h3>
+          <h4>Founder - Roti Boti</h4>
+          <p>Cooking Food & Programming</p>
+        </div>
+      </div>
+      <div class="text-white d-flex border border-white mx-auto rounded-pill p-2 gap-2" style="width:75%" >
+        <img src="./Images/Nafay.jpg" class="rounded-circle" width="15%" alt="Ali Hussain"/>
+        <div class="d-flex flex-column justify-content-center w-75">
+          <h3>Nafay Mujtaba Ikhlaq</h3>
+          <h4>CoFounder - Verdiend</h4>
+          <p>Building Intuitive Interfaces for Web Applications</p>
+        </div>
+      </div>
     </div>
     <?php include './Components/Footer/Footer.php'?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

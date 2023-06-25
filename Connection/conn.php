@@ -2,7 +2,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "iVision";
+  $dbname = "databaseproject";
   
   $con = new mysqli($servername, $username, $password , $dbname);
 

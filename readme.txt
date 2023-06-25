@@ -1,0 +1,1 @@
+CREATE TABLE users(userid integer PRIMARY KEY AUTO_INCREMENT , name varchar(255) , email varchar(250) NOT NULL, userpassword varchar(255) NOT null , address text not null, homephone varchar(255) not null, workphone varchar(255) , admin varchar(10) not null);

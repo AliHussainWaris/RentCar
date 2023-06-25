@@ -10,27 +10,9 @@
 <body style="background-color:black;" class="text-white">
     <?php $page="Car"; include './Components/Navbar/Navbar.php'?>
     <div class="w-100 d-flex my-2">
-        <div id="carouselExampleControls" class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 border border-black carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="https://robbreport.com/wp-content/uploads/2021/07/1-15.jpg" class="d-block w-100" alt="..1">
-                </div>
-                <div class="carousel-item">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROwB77CFgLzmAsX1M6O3tTFlUiP8ogvRO6MUQlcEn61MFTFD5Gz_HraLzE3zP9ZS-_rUg&usqp=CAU" class="d-block w-100" alt="..2">
-                </div>
-                <div class="carousel-item">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXC7WDr2UFu81AZTE0ET4vsLEAbfdlIWgbP3yyQmAxCG_Pe6WKmxLzJu7H9v_06bv-w-8&usqp=CAU" class="d-block w-100" alt="..3">
-                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 p-2 ">
             <h3 class="text-center">CAR NAME</h3>
             <div class="p-2">
