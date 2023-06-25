@@ -9,6 +9,7 @@
 </head>
 <body style="background-color:black;" class="text-white">
     <?php $page="Car"; include './Components/Navbar/Navbar.php'?>
+    <?php include './Connection/conn.php'?>
     <div class="w-100 row my-2">
       <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 mx-auto">
       <form>
@@ -70,24 +71,26 @@
       <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 mx-auto">
         <div style="width:95%" class="mx-auto p-2">
           <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card">
-                <img src="https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/porsche_newsroom/Produkte/918-Spyder/918-Spyder5/jcr:content/918%20Spyder%20mittig.jpg" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                  <h4 class="card-title">Card title</h4>
-                  <h5 class="card-title">RS 15000</h5>
-                </div>
+          <?php
+            $name = $_COOKIE["carbrand"];
+            $sql;
+            if($name == "All" ){
+              $sql = "SELECT * from cars";
+            }else{
+              $sql = "SELECT * FROM `cars` WHERE name = '$name'";
+            }
+            $result = mysqli_query($con , $sql);
+            foreach($result as $results){
+            echo "<div class='col'>
+              <div class='card'>
+                <img src='UploadImages/".$results['mainimage']."' class='card-img-top' alt='...'>
+                <div class='card-body text-center'>";
+                  echo"<h4 class='card-title'>".$results['name']."</h4>";
+                  echo"<h5 class='card-title'>".$results['price']."</h5>";
+                echo"</div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/porsche_newsroom/Produkte/918-Spyder/918-Spyder5/jcr:content/918%20Spyder%20mittig.jpg" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                  <h4 class="card-title">Card title</h4>
-                  <h5 class="card-title">RS 18000</h5>
-                </div>
-              </div>
-            </div>
+            </div>";};
+            ?>
           </div>
         </div>
       </div>

@@ -10,32 +10,7 @@
   </head>
   <body style="background-color:black" class="text-white">
     <div class="w-100 p-2 d-flex flex-row gap-2">
-      <div class="d-flex flex-column gap-2" style="width:20%">
-        <div>
-          <ul class="nav justify-content-around">
-            <li>
-              <img src="./Images/Logo.png" width="40px" alt="Logo"/>
-            </li>
-            <li>
-              <h4>Dashboard</h4>
-            </li>
-          </ul>
-        </div>
-        <ul class="list-group text-center">
-          <li class="list-group-item text-white bg-secondary">
-            <a href="#" class="text-white text-decoration-none">
-              <i class="bi bi-house"></i>
-              <span>Home</span>
-            </a>
-          </li>
-          <li class="list-group-item text-white bg-secondary">
-            <a href="#" class="text-white text-decoration-none">
-              <i class="bi bi-person"></i>
-              <span>User</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <?php include './Components/Sidebar/Sidebar.php'?>
       <?php include './Connection/conn.php'?>
       <?php
         if (isset($_POST['submit'])) {
@@ -139,48 +114,9 @@
                 </button>
               </td>
               <td>
-                <button class='btn btn-danger text-white'>
+                <a href='./DeleteCar.php' onClick='cardatas(".$results['carid'].")' class='btn btn-danger text-white'>
                   <i class='bi bi-trash'></i>
-                </button>
-              </td>";};
-            echo"</tr>
-          </table>";
-          ?>
-
-        </div>
-        <div>
-          <?php
-          $sqlse = "SELECT * from users";
-          $result2 = mysqli_query($con , $sqlse);
-          echo"
-          <table class='table table-dark text-center'>
-            <tr>
-              <th>UserID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Password</th>
-              <th>Location</th>
-              <td>Admin</td>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-            <tr>";
-              foreach($result2 as $resulted){
-              echo "<td>".$resulted['id']."</td>";
-              echo "<td>".$resulted['name']."</td>";
-              echo "<td>".$resulted['email']."</td>";
-              echo "<td>".$resulted['userpassword']."</td>";
-              echo "<td>".$resulted['address']."</td>";
-              echo "<td>".$resulted['userole']."</td>";
-              echo"<td>
-                <button class='btn btn-warning text-white'>
-                  <i class='bi bi-pencil-square'></i>
-                </button>
-              </td>
-              <td>
-                <button class='btn btn-danger text-white'>
-                  <i class='bi bi-trash'></i>
-                </button>
+                </a>
               </td>";};
             echo"</tr>
           </table>";
@@ -188,5 +124,10 @@
         </div>
       </div>
     </div>
+    <script>
+      function cardatas(carid){
+        document.cookie = "carid=" + carid;
+      }
+    </script>
   </body>
 </html>

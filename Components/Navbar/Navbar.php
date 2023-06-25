@@ -23,7 +23,7 @@
                 <a class="nav-link <?php if($page=='index'){echo"active border-bottom border-light";}?>" aria-current="page" href="./index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($page=='Car'){echo"active border-bottom border-light";}?>" aria-current="page" href="./Cars.php">Cars</a>
+                <a class="nav-link <?php if($page=='Car'){echo"active border-bottom border-light";}?>" onClick="data('All')" aria-current="page" href="./Cars.php">Cars</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?php if($page=='About'){echo"active border-bottom border-light";}?>" aria-current="page" href="./About.php">About</a>
@@ -46,5 +46,10 @@
         </ul>
     </div>
     </nav>
+    <script>
+        function data(name){
+            document.cookie = "carbrand = "+name;
+        }
+    </script>
 </body>
 </html>

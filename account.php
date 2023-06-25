@@ -22,7 +22,8 @@
             if ($login > 0) {
                 $row = mysqli_fetch_assoc($result);
                 $userRole = $row['userole'];
-
+                $userID = $row['userid'];
+                setcookie("userLoginId" , $userID);
                 if ($userRole == "False") {
                     header("Location: index.php");
                     exit();

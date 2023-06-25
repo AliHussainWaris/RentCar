@@ -30,30 +30,30 @@
         <h3>Cars Brands</h3>
         <div >
           <div class="row row-cols-1 row-cols-md-3 g-4 text-uppercase">
-              <div class="col">
+              <a href="./Cars.php" class="col text-decoration-none" onclick="Cars('Porsche')">
                 <div class="card bg-light text-center border-0 text-center">
                   <img src="./Images/Porsche.png" style="width:35%; height: 100px;" class="card-img-top mx-auto" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Porsche</h5>
                   </div>
                 </div>
-              </div>
-              <div class="col">
+              </a>
+              <a href="./Cars.php" class="col text-decoration-none" onclick="Cars('Tesla')">
                 <div class="card text-center border-0">
                   <img src="./Images/Tesla.png" style="width:35%;height: 100px;" class="card-img-top mx-auto" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Tesla</h5>
                   </div>
                 </div>
-              </div>
-              <div class="col">
+              </a>
+              <a href="./Cars.php" class="col text-decoration-none" onclick="Cars('Nissan')">
                 <div class="card text-center border-0">
                   <img src="./Images/nissan.png" style="width:35%;height: 100px;" class="card-img-top mx-auto" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Nissan</h5>
                   </div>
                 </div>
-              </div>
+              </a>
           </div>
         </div>
       </div>
@@ -100,5 +100,10 @@
 
     <?php include './Components/Footer/Footer.php'?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+      function Cars(name){
+        document.cookie = "carbrand =" + name;
+      }
+    </script>
   </body>
 </html>
