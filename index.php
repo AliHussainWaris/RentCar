@@ -27,38 +27,30 @@
 
     <div class="mx-auto p-2 my-2" style="width:90%">
       <div>
-        <h3>Cars Types</h3>
-        <div>
-          <div class="row row-cols-1 row-cols-md-4 g-4 text-uppercase">
+        <h3>Cars Brands</h3>
+        <div >
+          <div class="row row-cols-1 row-cols-md-3 g-4 text-uppercase">
               <div class="col">
                 <div class="card bg-light text-center border-0 text-center">
-                  <img src="./Images/sedan.png" style="width:35%" class="card-img-top mx-auto" alt="...">
+                  <img src="./Images/Porsche.png" style="width:35%; height: 100px;" class="card-img-top mx-auto" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">SEDAN</h5>
+                    <h5 class="card-title">Porsche</h5>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card text-center border-0">
-                  <img src="./Images/sports.png" style="width:35%" class="card-img-top mx-auto" alt="...">
+                  <img src="./Images/Tesla.png" style="width:35%;height: 100px;" class="card-img-top mx-auto" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Sports</h5>
+                    <h5 class="card-title">Tesla</h5>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card text-center border-0">
-                  <img src="./Images/suv.png" style="width:35%" class="card-img-top mx-auto" alt="...">
+                  <img src="./Images/nissan.png" style="width:35%;height: 100px;" class="card-img-top mx-auto" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">SUV</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card text-center border-0">
-                  <img src="./Images/ev.png" style="width:35%" class="card-img-top mx-auto" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">EV</h5>
+                    <h5 class="card-title">Nissan</h5>
                   </div>
                 </div>
               </div>

@@ -114,7 +114,11 @@
               <button type="submit" name="submit" class="btn btn-primary w-100 mt-3">Submit</button>
             </form>
           </div>
-          <Table class="table table-dark text-center">
+          <?php
+          $sql = "SELECT * from cars";
+          $result = mysqli_query($con,$sql);
+
+          echo "<table class='table table-dark text-center'>
             <tr>
               <th>#</th>
               <th>Car Name</th>
@@ -123,26 +127,33 @@
               <th>Edit</th>
               <th>Delete</th>
             </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <button class="btn btn-warning text-white">
-                  <i class="bi bi-pencil-square"></i>
+            <tr>";
+            foreach($result as $results){
+              echo"<td>".$results['carid']."</td>";
+              echo"<td>".$results['name']."</td>";
+              echo"<td>".$results['model']."</td>";
+              echo"<td>".$results['location']."</td>";
+              echo"<td>
+                <button class='btn btn-warning text-white'>
+                  <i class='bi bi-pencil-square'></i>
                 </button>
               </td>
               <td>
-                <button class="btn btn-danger text-white">
-                  <i class="bi bi-trash"></i>
+                <button class='btn btn-danger text-white'>
+                  <i class='bi bi-trash'></i>
                 </button>
-              </td>
-            </tr>
-          </Table>
+              </td>";};
+            echo"</tr>
+          </table>";
+          ?>
+
         </div>
         <div>
-          <table class="table table-dark text-center">
+          <?php
+          $sqlse = "SELECT * from users";
+          $result2 = mysqli_query($con , $sqlse);
+          echo"
+          <table class='table table-dark text-center'>
             <tr>
               <th>UserID</th>
               <th>Name</th>
@@ -153,25 +164,27 @@
               <th>Edit</th>
               <th>Delete</th>
             </tr>
-            <tr>
-              <td>UserID</td>
-              <td>Name</td>
-              <td>Email</td>
-              <td>Password</td>
-              <td>Admin</td>
-              <td>Location</td>
-              <td>
-                <button class="btn btn-warning text-white">
-                  <i class="bi bi-pencil-square"></i>
+            <tr>";
+              foreach($result2 as $resulted){
+              echo "<td>".$resulted['id']."</td>";
+              echo "<td>".$resulted['name']."</td>";
+              echo "<td>".$resulted['email']."</td>";
+              echo "<td>".$resulted['userpassword']."</td>";
+              echo "<td>".$resulted['address']."</td>";
+              echo "<td>".$resulted['userole']."</td>";
+              echo"<td>
+                <button class='btn btn-warning text-white'>
+                  <i class='bi bi-pencil-square'></i>
                 </button>
               </td>
               <td>
-                <button class="btn btn-danger text-white">
-                  <i class="bi bi-trash"></i>
+                <button class='btn btn-danger text-white'>
+                  <i class='bi bi-trash'></i>
                 </button>
-              </td>
-            </tr>
-          </table>
+              </td>";};
+            echo"</tr>
+          </table>";
+          ?>
         </div>
       </div>
     </div>

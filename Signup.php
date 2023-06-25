@@ -24,6 +24,7 @@
         $sql = "INSERT INTO users (name, email, `userpassword`, address, homephone, workphone, userole) VALUES ('$name', '$email', '$password', '$address', '$homephone', 'XXX-XXXXX', 'False')";
         
         try {
+            mysqli_query($con , $sql);
             $check = mysqli_query($con, "SELECT 1 FROM users LIMIT 1");
             
             if (!$check) {
