@@ -22,7 +22,7 @@
         </div>
         <ul class="list-group text-center">
           <li class="list-group-item text-white bg-secondary">
-            <a href="#" class="text-white text-decoration-none">
+            <a href="Dashboard.php" class="text-white text-decoration-none">
               <i class="bi bi-house"></i>
               <span>Home</span>
             </a>
@@ -31,6 +31,12 @@
             <a href="DashboardUser.php" class="text-white text-decoration-none">
               <i class="bi bi-person"></i>
               <span>User</span>
+            </a>
+          </li>
+          <li class="list-group-item text-white bg-secondary">
+            <a href="DashboardUser.php" class="text-white text-decoration-none">
+              <i class="bi bi-person-vcard"></i>
+              <span>Rented Person</span>
             </a>
           </li>
         </ul>

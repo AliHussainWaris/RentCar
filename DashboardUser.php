@@ -30,9 +30,9 @@
               <td>Admin</td>
               <th>Edit</th>
               <th>Delete</th>
-            </tr>
-            <tr>";
-              foreach($result2 as $resulted){
+            </tr>";
+            foreach($result2 as $resulted){
+              echo"<tr>";
               echo "<td>".$resulted['userid']."</td>";
               echo "<td>".$resulted['name']."</td>";
               echo "<td>".$resulted['email']."</td>";
@@ -48,9 +48,9 @@
                 <a href='./DeleteUser.php' onClick='cardatas(".$resulted['userid'].")' class='btn btn-danger text-white'>
                   <i class='bi bi-trash'></i>
                 </a>
-              </td>";};
-            echo"</tr>
-          </table>";
+              </td>
+            </tr>";};
+            echo"</table>";
           ?>
         </div>
       </div>

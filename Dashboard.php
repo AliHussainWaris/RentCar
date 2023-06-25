@@ -101,9 +101,9 @@
               <th>Location</th>
               <th>Edit</th>
               <th>Delete</th>
-            </tr>
-            <tr>";
+            </tr>";
             foreach($result as $results){
+            echo "<tr>";
               echo"<td>".$results['carid']."</td>";
               echo"<td>".$results['name']."</td>";
               echo"<td>".$results['model']."</td>";
@@ -117,9 +117,10 @@
                 <a href='./DeleteCar.php' onClick='cardatas(".$results['carid'].")' class='btn btn-danger text-white'>
                   <i class='bi bi-trash'></i>
                 </a>
-              </td>";};
-            echo"</tr>
-          </table>";
+              </td>
+             </tr>";
+            };
+            echo"</table>";
           ?>
         </div>
       </div>
