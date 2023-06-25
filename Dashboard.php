@@ -37,43 +37,43 @@
         </ul>
       </div>
       <?php include './Connection/conn.php'?>
-      <?php 
+      <?php
         if (isset($_POST['submit'])) {
-          $car = $_POST["car"];
-          $model = $_POST["model"];
-          $price = $_POST["price"];
-          $location = $_POST["location"];
-          $mainiamge = $_FILES["mainimage"]["name"];
-          $tempname1 = $_FILES["mainimage"]["tmp_name"];
-          $folder1 = "./UploadImages/" . $mainiamge;
-          move_uploaded_file($tempname1, $folder1);
+            $car = $_POST["car"];
+            $model = $_POST["model"];
+            $price = $_POST["price"];
+            $location = $_POST["location"];
+            $mainimage = $_FILES["mainimage"]["name"];
+            $tempname1 = $_FILES["mainimage"]["tmp_name"];
+            $folder1 = "./UploadImages/" . $mainimage;
+            move_uploaded_file($tempname1, $folder1);
 
-          $sqs = "INSERT INTO cars(name , model , price , location , mainimage) VALUES ($car , $model , $price , $location , $mainiamge)";
-          try {
-              $check = mysqli_query($con, "SELECT 1 FROM cars LIMIT 1");
-              mysqli_query($con , $sqs);
-              if (!$check) {
-                  echo "<div class='align-items-center text-bg-danger border-0 p-3 mt-2 rounded w-50 mx-auto mb-2' id='alert' onClick='clicked()'>
-                          <div class='d-flex'>
-                              <div class='toast-body'>
-                                  Error in Sending Data!
-                              </div>
-                              <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
-                          </div>
-                      </div>";
-              }
-          } catch (mysqli_sql_exception $e) {
-              $sqled = "CREATE TABLE cars(carid integer PRIMARY KEY AUTO_INCREMENT,name varchar(255) , model varchar(225) , price integer , location varchar(50),
-              mainimage varchar(255));";
-              $result = mysqli_query($con, $sqled);
-              if ($result) {
-                  $sqs = "INSERT INTO cars(name , model , price , location , mainimage) VALUES ($cars , $model , $price , $location , $mainiamge)";
-                  $result = mysqli_query($con, $sqs);
-                  exit();
-              }
-          }
+            $sqs = "INSERT INTO cars(name, model, price, location, mainimage) VALUES ('$car', '$model', '$price', '$location', '$mainimage')";
+            try {
+                $check = mysqli_query($con, "SELECT 1 FROM cars LIMIT 1");
+                mysqli_query($con, $sqs);
+                if (!$check) {
+                    echo "<div class='align-items-center text-bg-danger border-0 p-3 mt-2 rounded w-50 mx-auto mb-2' id='alert' onClick='clicked()'>
+                            <div class='d-flex'>
+                                <div class='toast-body'>
+                                    Error in Sending Data!
+                                </div>
+                                <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
+                            </div>
+                        </div>";
+                }
+            } catch (mysqli_sql_exception $e) {
+                $sqled = "CREATE TABLE cars(carid integer PRIMARY KEY AUTO_INCREMENT, name varchar(255), model varchar(225), price integer, location varchar(50), mainimage varchar(255));";
+                $result = mysqli_query($con, $sqled);
+                if ($result) {
+                    $sqs = "INSERT INTO cars(name, model, price, location, mainimage) VALUES ('$car', '$model', '$price', '$location', '$mainimage')";
+                    $result = mysqli_query($con, $sqs);
+                    exit();
+                }
+            }
         }
-      ?>
+        ?>
+
       <div style="width:80%;">
         <h1 class="text-center">DASHBOARD</h1>
         <div class="mx-auto" style="width:80%;">
