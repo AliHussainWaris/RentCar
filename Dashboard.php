@@ -39,16 +39,15 @@
       <?php include './Connection/conn.php'?>
       <?php
         if (isset($_POST['submit'])) {
+            $image=$_FILES['image']['name'];
             $car = $_POST["car"];
             $model = $_POST["model"];
             $price = $_POST["price"];
             $location = $_POST["location"];
-            $mainimage = $_FILES["mainimage"]["name"];
-            $tempname1 = $_FILES["mainimage"]["tmp_name"];
-            $folder1 = "./UploadImages/" . $mainimage;
-            move_uploaded_file($tempname1, $folder1);
+            $target="UploadImages/".basename($image);
+            move_uploaded_file($_FILES['image']['tmp_name'] , $target);
 
-            $sqs = "INSERT INTO cars(name, model, price, location, mainimage) VALUES ('$car', '$model', '$price', '$location', '$mainimage')";
+            $sqs = "INSERT INTO cars(name, model, price, location, mainimage) VALUES ('$car', '$model', '$price', '$location', '$image')";
             try {
                 $check = mysqli_query($con, "SELECT 1 FROM cars LIMIT 1");
                 mysqli_query($con, $sqs);
@@ -63,10 +62,11 @@
                         </div>";
                 }
             } catch (mysqli_sql_exception $e) {
-                $sqled = "CREATE TABLE cars(carid integer PRIMARY KEY AUTO_INCREMENT, name varchar(255), model varchar(225), price integer, location varchar(50), mainimage varchar(255));";
+                $sqled = "CREATE TABLE cars(carid integer PRIMARY KEY AUTO_INCREMENT, name varchar(255), model varchar(225), price integer, location varchar(50), mainimage text);";
                 $result = mysqli_query($con, $sqled);
                 if ($result) {
-                    $sqs = "INSERT INTO cars(name, model, price, location, mainimage) VALUES ('$car', '$model', '$price', '$location', '$mainimage')";
+                    $sqs = "INSERT INTO cars(name, model, price, location, mainimage) VALUES ('$car', '$model', '$price', '$location', '$image')";
+                    // $sqs = "INSERT INTO cars(name, model, price, location, mainimage) VALUES ('$car', '$model', '$price', '$location', '$mainimage')";
                     $result = mysqli_query($con, $sqs);
                     exit();
                 }
@@ -78,7 +78,7 @@
         <h1 class="text-center">DASHBOARD</h1>
         <div class="mx-auto" style="width:80%;">
           <div class="mb-5 mt-5">
-            <form class="w-50 mx-auto" method="POST" action="">
+            <form class="w-50 mx-auto" method="POST" action="" enctype="multipart/form-data">
               <div class="d-flex gap-2">
                 <div class="form-group">
                   <label>Car</label>
@@ -108,7 +108,7 @@
               <div class="d-flex flex-column gap-2">
                 <div class="form-group">
                   <label for="exampleInputImage">Main Image</label>
-                  <input type="file" name="mainimage" class="form-control" id="exampleInputImage">
+                  <input type="file" name="image" class="form-control" id="exampleInputImage">
                 </div>
               </div>
               <button type="submit" name="submit" class="btn btn-primary w-100 mt-3">Submit</button>
